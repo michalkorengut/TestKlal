@@ -1,0 +1,13 @@
+
+<div *ngIf="dept">
+    <span> {{dept.DepartmentID}}-{{dept.DepartmentName}}</span>
+    <button (click)="changeListView()">+</button>
+    <!-- {{openList}} -->
+    <ul *ngIf="openList">
+       <li *ngFor="let child of dept.childrenList">
+        <app-display-departments [deptId]="child.DepartmentID"></app-display-departments>
+       </li>
+    </ul>
+</div>
+
+

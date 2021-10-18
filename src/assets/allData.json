@@ -1,0 +1,246 @@
+{
+    "Employees": [
+        {
+            "EmployeeName": "avram",
+            "EmployeePicture": "assets/images/pizza.png"
+        },
+        {
+            "EmployeeName": "naama",
+            "EmployeePicture": "assets/images/see.png"
+        },
+        {
+            "EmployeeName": "beni",
+            "EmployeePicture": "assets/images/pizza.png"
+        },
+        {
+            "EmployeeName": "lea",
+            "EmployeePicture": "assets/images/see.png"
+        },
+        {
+            "EmployeeName": "moti",
+            "EmployeePicture": "assets/images/green.png"
+        }
+        
+    ],
+    "Departments": [
+        {
+            "DepartmentID": 1,
+            "DepartmentName": "food"
+            
+            },
+            {
+                "DepartmentID": 2,
+                "DepartmentName": "drink",
+                "ParentID":1                    
+                },
+                {
+                    "DepartmentID": 3,
+                    "DepartmentName": "makeup",
+                   "ParentID":2
+        },
+        {
+            "DepartmentID": 4,
+            "DepartmentName": "drink",
+            "ParentID":2
+        },
+        
+        {
+            "DepartmentID": 5,
+            "DepartmentName": "kola",
+            "ParentID":4
+        },
+        {
+            "DepartmentID": 6,
+            "DepartmentName": "kola",
+            "ParentID":4
+        }
+    ]
+    ,
+    "Tasks": [
+        {
+            "TaskNumber": 1,
+            "TaskName": "create",
+            "StatusID":2,
+            "EmployeeName":"avram",
+            "DepartmentID":1,
+            "DueDate":"2021-08-14"
+
+        },
+        {
+            "TaskNumber": 2,
+            "TaskName": "new",
+            "StatusID":1,
+            "EmployeeName":"avram",
+            "DepartmentID":1,
+            "DueDate":"2021-09-30"
+
+        },
+        {
+            "TaskNumber": 3,
+            "TaskName": "project",
+            "StatusID":2,
+            "EmployeeName":"avram",
+            "DepartmentID":1,
+            "DueDate":"2021-05-15"
+        },
+        {
+            "TaskNumber": 4,
+            "TaskName": "create",
+            "StatusID":2,
+            "EmployeeName":"avram",
+            "DepartmentID":1,
+            "DueDate":"2021-08-14"
+
+        },
+        {
+            "TaskNumber": 5,
+            "TaskName": "new",
+            "StatusID":1,
+            "EmployeeName":"yakov",
+            "DepartmentID":1,
+            "DueDate":"2021-09-30"
+
+        },
+        {
+            "TaskNumber": 6,
+            "TaskName": "project",
+            "StatusID":2,
+            "EmployeeName":"yakov",
+            "DepartmentID":1,
+            "DueDate":"2021-05-15"
+        },
+        {
+            "TaskNumber": 7,
+            "TaskName": "create",
+            "StatusID":2,
+            "EmployeeName":"avram",
+            "DepartmentID":1,
+            "DueDate":"2023-08-14"
+
+        },
+        {
+            "TaskNumber": 8,
+            "TaskName": "new",
+            "StatusID":1,
+            "EmployeeName":"avram",
+            "DepartmentID":1,
+            "DueDate":"2021-09-30"
+
+        },
+        {
+            "TaskNumber": 9,
+            "TaskName": "project",
+            "StatusID":2,
+            "EmployeeName":"avram",
+            "DepartmentID":1,
+            "DueDate":"2021-05-15"
+        }
+        ,
+        {
+            "TaskNumber": 6,
+            "TaskName": "project",
+            "StatusID":2,
+            "EmployeeName":"yakov",
+            "DepartmentID":1,
+            "DueDate":"2021-05-15"
+        },
+        {
+            "TaskNumber": 7,
+            "TaskName": "create",
+            "StatusID":2,
+            "EmployeeName":"beni",
+            "DepartmentID":1,
+            "DueDate":"2022-18-14"
+
+        },
+        {
+            "TaskNumber": 8,
+            "TaskName": "new",
+            "StatusID":1,
+            "EmployeeName":"beni",
+            "DepartmentID":1,
+            "DueDate":"2021-09-30"
+
+        },
+        {
+            "TaskNumber": 9,
+            "TaskName": "project",
+            "StatusID":2,
+            "EmployeeName":"avram",
+            "DepartmentID":1,
+            "DueDate":"2021-05-15"
+        }
+        ,
+        {
+            "TaskNumber": 6,
+            "TaskName": "project",
+            "StatusID":2,
+            "EmployeeName":"lea",
+            "DepartmentID":1,
+            "DueDate":"2021-05-15"
+        },
+        {
+            "TaskNumber": 7,
+            "TaskName": "create",
+            "StatusID":2,
+            "EmployeeName":"avram",
+            "DepartmentID":1,
+            "DueDate":"2021-10-14"
+
+        },
+        {
+            "TaskNumber": 8,
+            "TaskName": "new",
+            "StatusID":1,
+            "EmployeeName":"avram",
+            "DepartmentID":1,
+            "DueDate":"2021-09-30"
+
+        },
+        {
+            "TaskNumber": 9,
+            "TaskName": "project",
+            "StatusID":2,
+            "EmployeeName":"avram",
+            "DepartmentID":1,
+            "DueDate":"2021-05-15"
+        }
+        ,
+        {
+            "TaskNumber": 6,
+            "TaskName": "project",
+            "StatusID":2,
+            "EmployeeName":"avram",
+            "DepartmentID":1,
+            "DueDate":"2021-05-15"
+        },
+        {
+            "TaskNumber": 7,
+            "TaskName": "create",
+            "StatusID":2,
+            "EmployeeName":"naama",
+            "DepartmentID":1,
+            "DueDate":"2021-08-14"
+
+        },
+        {
+            "TaskNumber": 8,
+            "TaskName": "new",
+            "StatusID":1,
+            "EmployeeName":"avram",
+            "DepartmentID":1,
+            "DueDate":"2021-09-30"
+
+        },
+        {
+            "TaskNumber": 9,
+            "TaskName": "project",
+            "StatusID":2,
+            "EmployeeName":"avram",
+            "DepartmentID":1,
+            "DueDate":"2021-05-15"
+        }
+    ]
+
+
+}

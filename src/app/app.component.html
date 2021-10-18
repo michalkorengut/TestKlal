@@ -1,0 +1,103 @@
+<div>
+
+  <mat-drawer-container class="example-container">
+    <mat-drawer mode="side" opened>
+      <!-- <app-workers (selectEmployee)="filterData($event)"></app-workers> -->
+    </mat-drawer>
+    <mat-drawer-content>
+
+      <mat-form-field *ngIf="isDataReady"  class="wrap-field">
+        <mat-label>בחר עובד</mat-label>
+        <mat-select [(ngModel)]="selectedEmployee" (selectionChange)="onSelectEmployee()">
+            <ng-container>
+                <mat-option [value]="'-1'">
+                    הכל
+                </mat-option>
+            </ng-container>
+            <ng-container *ngFor="let empolyee of myEmployees">
+                <mat-option [value]="empolyee.EmployeeName">
+                   <span>{{empolyee.EmployeeName}}</span> 
+                   <img class="img" [src]="empolyee.EmployeePicture" />
+                </mat-option>
+            </ng-container>
+        </mat-select>
+    </mat-form-field>
+
+
+<br/>
+
+    <!-- <mat-form-field *ngIf="isDataReady"  class="all-departmenrs"> -->
+      <mat-label>בחר מחלקה כדי לראות את הבנים</mat-label>
+      <br/>
+      <!-- <mat-select [(ngModel)]="selectedEmployee" (selectionChange)="onSelectEmployee()"> -->
+          <ng-container >
+              <mat-nav-list>
+              <mat-list-item  *ngFor="let departmentID of myDepartments" (click)="selectDepartments(departmentID.DepartmentID)"> <br/>  מספר המחלקה- {{departmentID.DepartmentID}}  </mat-list-item>      
+              </mat-nav-list>
+          </ng-container>
+      <!-- </mat-form-field> -->
+   
+    <div *ngIf="selectDepartments!=undefined">
+      <app-display-departments [deptId]="selectedDepartment">
+     </app-display-departments>
+    </div>
+      <div class="div-button">
+        <button mat-raised-button class="tasks" (click)="showTaskFun()">הצג את כל משימות</button>
+      </div>
+      <section *ngIf="showTasks" >
+        <div class="all-tasks">
+          <table mat-table [dataSource]="dataSource" matSort class="table" dir="rtl">
+        
+        <ng-container matColumnDef="TaskNumber" class="row">
+          <th class="cotarotbatavla" mat-header-cell *matHeaderCellDef mat-sort-header> מספר משימה </th>
+          <td class="myrow bigrow" mat-cell *matCellDef="let element" [ngClass]="{'red': func(element.DueDate)}">
+            {{element.TaskNumber}} </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="TaskName" class="row bigrow">
+          <th class="cotarotbatavla" mat-header-cell *matHeaderCellDef mat-sort-header> שם משימה </th>
+          <td class="myrow bigrow" mat-cell *matCellDef="let element" [ngClass]="{'red': func(element.DueDate)}">
+            {{element.TaskName}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="StatusID" class="row">
+          <th class="cotarotbatavla" mat-header-cell *matHeaderCellDef mat-sort-header> סטטוס משימה </th>
+          <td class="myrow bigrow" mat-cell *matCellDef="let element" [ngClass]="{'red': func(element.DueDate)}">
+            {{element.StatusID}} </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="EmployeeName" class="row">
+          <th class="cotarotbatavla" mat-header-cell *matHeaderCellDef mat-sort-header>שם העובד</th>
+          <td class="myrow" mat-cell *matCellDef="let element" [ngClass]="{'red': func(element.DueDate)}">
+            {{element.EmployeeName}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="DepartmentID" class="row">
+          <th class="cotarotbatavla" mat-header-cell *matHeaderCellDef mat-sort-header> מספר מחלקה </th>
+          <td class="myrow" mat-cell *matCellDef="let element" class="myrow"  [ngClass]="{'red': func(element.DueDate)}">
+            {{element.DepartmentID}} </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="DueDate" class="row">
+          <th class="cotarotbatavla" mat-header-cell *matHeaderCellDef mat-sort-header> תאריך </th>
+          <td class="myrow" mat-cell *matCellDef="let element" [ngClass]="{'red': func(element.DueDate)}">
+            {{ element.DueDate  }} </td>
+
+
+        </ng-container>
+
+        <tr class="myallheader" mat-header-row *matHeaderRowDef="displayedColumns;  sticky: true"></tr>
+        <tr class="myallrow" mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </div>
+        <mat-paginator #paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]"
+          aria-label="Select page">
+        </mat-paginator>
+      </section>
+    </mat-drawer-content>
+  </mat-drawer-container>
+
+</div>

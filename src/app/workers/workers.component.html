@@ -1,0 +1,22 @@
+<div class="try">
+    <table mat-table [dataSource]="dataSource" class="table" dir="rtl">
+
+        <ng-container matColumnDef="EmployeeName" class="row">
+            <th class="cotarotbatavla" mat-header-cell *matHeaderCellDef> שם העובד </th>
+            <td class="myrow bigrow" mat-cell *matCellDef="let element">
+                {{element.EmployeeName}} </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="EmployeePicture" class="row bigrow">
+            <th class="cotarotbatavla" mat-header-cell *matHeaderCellDef> תמונה </th>
+            <td class="myrow bigrow" mat-cell *matCellDef="let element">
+                <img class="img" [src]="element.EmployeePicture" /></td>
+        </ng-container>
+
+
+        <tr class="myallheader" mat-header-row *matHeaderRowDef="displayedColumns;  sticky: true"></tr>
+        <tr class="myallrow" mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onclickEmployee(row)">
+        </tr>
+    </table>
+</div>
